@@ -14,7 +14,9 @@ public class PacMan extends MovingObject{
     @Override
     public String getAscii() {
         animCounter++;
-        return "◕";
+        if (animCounter%2==0)
+            return "◕";
+        else return"*";
     }
     
 }
