@@ -5,13 +5,21 @@
  */
 package Assignment6Test;
 
+import static Assignment6Test.MovingObject.Direction.*;
+import java.util.Random;
+
 /**
  *
  * @author Jeppe
  */
 public class Ghost extends MovingObject{
-
+    private static final Random rand = new Random(); 
+    
     private boolean isEatable;
+
+    public Ghost(Level lvl, Direction direction, int speed, int x, int y) {
+        super(lvl, direction, speed, x, y);
+    }
 
     /**
      * Get the value of isEatable
@@ -35,5 +43,34 @@ public class Ghost extends MovingObject{
     public String getAscii() {
         return "∩";
     }
+
+    private void setRandomDirection()
+    {
+        int dir = rand.nextInt(4);
+        switch (dir) {
+            case 0:
+                setDirection(UP);
+                break;
+            case 1:
+                setDirection(RIGHT);
+                break;
+            case 2:
+                setDirection(DOWN);
+                break; 
+            case 3:
+                setDirection(LEFT);
+                break;
+            default:
+                throw new UnsupportedOperationException("Not supported yet.");
+        }
+    }
+    
+    @Override
+    public void move() {
+        setRandomDirection();
+        super.move();
+    }
+
+    
     
 }

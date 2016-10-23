@@ -5,12 +5,24 @@
  */
 package Assignment6Test;
 
+import static Assignment6Test.MovingObject.Direction.*;
+
 /**
  *
  * @author Jeppe
  */
 public class PacMan extends MovingObject{
     private int animCounter=0;
+
+    public PacMan(Level lvl, Direction direction, int speed, int x, int y) {
+        super(lvl, direction, speed, x, y);
+    }
+    
+    public void move()
+    {
+        super.move();
+    }
+    
     @Override
     public String getAscii() {
         animCounter++;

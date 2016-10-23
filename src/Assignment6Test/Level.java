@@ -5,12 +5,24 @@
  */
 package Assignment6Test;
 
+import Assignment6Test.MovingObject.Direction;
+
 /**
  *
  * @author Jeppe
  */
 public class Level {
     PacPrintable[][] lvl1 = new PacPrintable[20][10];
+    Ghost ghost;
+    PacMan pacMan;
+
+    public Ghost getGhost() {
+        return ghost;
+    }
+
+    public PacMan getPacMan() {
+        return pacMan;
+    }
     
     @Override
     public String toString()
@@ -44,10 +56,22 @@ public class Level {
             lvl1[i][lvl1[0].length-1] = new Wall();
         }
         
-        lvl1[2][7] = new Ghost();
-        lvl1[4][2] = new Ghost();
-        lvl1[7][2] = new Ghost();
+        lvl1[2][7] = ghost = new Ghost(this,Direction.DOWN, 1, 2, 7);
+        lvl1[4][2] = new Ghost(this,Direction.DOWN, 1, 4, 2);
+        lvl1[7][2] = new Ghost(this,Direction.DOWN, 1, 7, 2);
         
-        lvl1[4][4] = new PacMan();
+        lvl1[4][4] = pacMan = new PacMan(this,Direction.DOWN, 1, 4, 4);
+    }
+
+    void update(MovingObject aThis) {
+        for (int i = 0; i < lvl1[0].length; i++) {
+            for (int j = 0; j < lvl1.length; j++) {
+                if (lvl1[j][i]==aThis)
+                {
+                    lvl1[j][i]=null;
+                    lvl1[aThis.getX()][aThis.getY()]=aThis;
+                }
+            }
+        }
     }
 }

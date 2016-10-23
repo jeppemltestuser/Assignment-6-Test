@@ -17,6 +17,16 @@ public class Assignment6Test {
     public static void main(String[] args) {
         Level lvl1 = new Level();
         lvl1.createMockLevel();
+        Ghost g = lvl1.getGhost();
+        PacMan p = lvl1.getPacMan();
+        System.out.print(lvl1);
+        
+        g.move();
+        p.move();
+        System.out.print(lvl1);
+        g.move();
+        System.out.print(lvl1);
+        g.move();
         System.out.print(lvl1);
     }
     
