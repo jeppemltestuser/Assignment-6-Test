@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Assignment6Test;
+package PacManGame;
 
 /**
  *
  * @author Jeppe
  */
-public interface PacPrintable {
-    public String getAscii();
+public abstract class StaticObject implements PacPrintable{
+    
 }

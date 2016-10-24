@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Assignment6Test;
+package PacManGame;
 
-import static Assignment6Test.MovingObject.Direction.*;
+import static PacManGame.MovingObject.Direction.*;
 import java.util.Random;
 
 /**

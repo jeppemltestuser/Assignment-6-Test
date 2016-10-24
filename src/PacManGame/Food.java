@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Assignment6Test;
+package PacManGame;
 
 /**
  *
  * @author Jeppe
  */
-public class Wall extends StaticObject{
+public class Food extends StaticObject{
+
     @Override
-    public String getAscii(){
-        return "#";
+    public String getAscii() {
+        return "·";
     }
 }
