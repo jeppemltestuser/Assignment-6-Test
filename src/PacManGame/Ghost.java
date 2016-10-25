@@ -10,7 +10,7 @@ import java.util.Random;
 
 /**
  *
- * @author Jeppe
+ * @author Testuser
  */
 public class Ghost extends MovingObject{
     private static final Random rand = new Random(); 
